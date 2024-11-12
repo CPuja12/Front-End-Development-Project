@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body class="bg-light">
+
+    <header class="bg-primary mb-4">
+        <div class="container py-3">
+            <h1 class="text-white text-center">West Bengal State University</h1>
+            <nav class="nav justify-content-center">
+                <a class="nav-link text-white" href="#">Home</a>
+                <a class="nav-link text-white" href="#">Tutorial</a>
+                <a class="nav-link text-white" href="#">About Us</a>
+                <a class="nav-link text-white" href="#">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <form class="p-4 bg-white rounded shadow">
+            <h2 class="text-center text-danger mb-4"><u>Admission Form</u></h2>
+
+            <fieldset>
+                <legend>Personal Information</legend>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Enter Your Name:</label>
+                    <input type="text" id="name" class="form-control" maxlength="40" placeholder="Your name" required autofocus>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Father's Name:</label>
+                    <input type="text" class="form-control" maxlength="40">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Mother's Name:</label>
+                    <input type="text" class="form-control" maxlength="40">
+                </div>
+                <div class="mb-3">
+                    <label for="tele" class="form-label">Phone No.:</label>
+                    <input type="tel" class="form-control" id="tele" placeholder="####-#####" required>
+                </div>
+                <div class="mb-3">
+                    <label for="mail" class="form-label">Email:</label>
+                    <input type="email" class="form-control" id="mail" placeholder="Valid email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password:</label>
+                    <input type="password" class="form-control" id="password" placeholder="For registration purpose" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">D.O.B.:</label>
+                    <input type="date" class="form-control" required>
+                </div>
+            </fieldset>
+
+            <fieldset class="mb-3">
+                <legend>Gender:</legend>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+                    <label class="form-check-label" for="male">Male</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                    <label class="form-check-label" for="female">Female</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" id="others" value="others">
+                    <label class="form-check-label" for="others">Transgender</label>
+                </div>
+            </fieldset>
+
+            <div class="mb-3">
+                <label for="subject" class="form-label">Select Your Subject:</label>
+                <select id="subject" class="form-select">
+                    <option value="bengali">Bengali</option>
+                    <option value="CS" selected>Computer Science</option>
+                    <option value="math">Math</option>
+                    <option value="geo">Geography</option>
+                    <option value="phy">Physics</option>
+                    <option value="music">Music</option>
+                </select>
+            </div>
+
+            <fieldset class="mb-3">
+                <legend>Religion:</legend>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="hindu" name="religion" value="hindu" onclick="checkOnlyOne(this)">
+                    <label class="form-check-label" for="hindu">Hindu</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="christian" name="religion" value="christian" onclick="checkOnlyOne(this)">
+                    <label class="form-check-label" for="christian">Christian</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="muslim" name="religion" value="muslim" onclick="checkOnlyOne(this)">
+                    <label class="form-check-label" for="muslim">Muslim</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="othersRel" name="religion" value="others" onclick="checkOnlyOne(this)">
+                    <label class="form-check-label" for="othersRel">Others</label>
+                </div>
+            </fieldset>
+
+           <div>
+            <fieldset>
+                <legend> Educational Information : </legend>
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">Study</th>
+                            <th scope="col">University/Institute/Board</th>
+                            <th scope="col">Score (in percentage)</th>
+                            <th scope="col">Stream</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="text" class="form-control" placeholder="Master's" required></td>
+                            <td><input type="text" class="form-control" placeholder="e.g., XYZ University" required></td>
+                            <td><input type="number" class="form-control" placeholder="e.g., 85" min="0" max="100" required></td>
+                            <td><input type="text" class="form-control" placeholder="e.g., Science" required></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" class="form-control" placeholder="Bachelor's" required></td>
+                            <td><input type="text" class="form-control" placeholder="e.g., ABC University" required></td>
+                            <td><input type="number" class="form-control" placeholder="e.g., 75" min="0" max="100" required></td>
+                            <td><input type="text" class="form-control" placeholder="e.g., Arts" required></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" class="form-control" placeholder="12th Exam" required></td>
+                            <td><input type="text" class="form-control" placeholder="e.g., State Board" required></td>
+                            <td><input type="number" class="form-control" placeholder="e.g., 65" min="0" max="100" required></td>
+                            <td><input type="text" class="form-control" placeholder="e.g., Commerce" required></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" class="form-control" placeholder="10th Exam" required></td>
+                            <td><input type="text" class="form-control" placeholder="e.g., CBSE Board" required></td>
+                            <td><input type="number" class="form-control" placeholder="e.g., 80" min="0" max="100" required></td>
+                            <td><input type="text" class="form-control" placeholder="e.g., General" required></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </fieldset>
+           </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Leave a Message:</label>
+                <textarea id="message" class="form-control" rows="5"></textarea>
+            </div>
+
+            <div class="mb-4">
+                <label class="form-label">Choose Your Photo:</label>
+                <input type="file" class="form-control">
+            </div>
+
+            <ul class="list-inline mb-4">
+                <li class="list-inline-item"><a href="#" target="_blank" class="link-primary">Home Page</a></li>
+                <li class="list-inline-item"><a href="#" target="_blank" class="link-primary">HelpDesk</a></li>
+            </ul>
+
+            <div class="d-flex justify-content-between">
+                <button class="btn btn-primary" type="submit">Submit</button>
+                <button class="btn btn-secondary" type="reset">Clear All</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- JavaScript for selecting only one checkbox -->
+    <script>
+    function checkOnlyOne(checkbox) {
+        const checkboxes = document.querySelectorAll('input[name="religion"]');
+        checkboxes.forEach((cb) => {
+            if (cb !== checkbox) {
+                cb.checked = false;
+            }
+        });
+    }
+    </script>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</body>
+</html>
